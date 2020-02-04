@@ -1,0 +1,16 @@
+{
+    "workbench.colorTheme": "Atom One Dark",
+    "workbench.iconTheme": "eq-material-theme-icons-palenight",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "files.autoSave": "afterDelay",
+    "editor.fontSize": 20,
+    "python.jediEnabled": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 0,
+    "editor.formatOnPaste": true,
+    "[javascript]": {
+        "editor.formatOnSave": true
+    }
+  
+}
