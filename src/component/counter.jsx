@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Counter extends Component {
 
     state = {
-        count:0,
-        tags:['t1','t2', 't3']
+        value:this.props.value,
+        // tags:['t1','t2', 't3']
     }
 
 /*
@@ -20,25 +20,26 @@ class Counter extends Component {
 */
 
     formatCount() {
-        let { count } = this.state;
-        return (count === 0 ? 'Zero' : count);
+        let { value } = this.state;
+        return (value === 0 ? 'Zero' : value);
     }
 
  
     handleIncrement= () => {
-        this.setState({count: this.state.count + 1})
+        this.setState({value: this.state.value + 1})
     }
 
     handleDecrement= () => {
-        this.setState({count: this.state.count - 1})
+        this.setState({value: this.state.value - 1})
     }
 
 
-    renderTag() {
-        if (this.state.tags.length === 0) return <p>There is no tag here!</p>;
 
-        return this.state.tags.map(tag => <li key={tag}>{tag}</li>)
-    }
+    // renderTag() {
+    //     if (this.state.tags.length === 0) return <p>There is no tag here!</p>;
+
+    //     return this.state.tags.map(tag => <li key={tag}>{tag}</li>)
+    // }
 
 
     render() { 
@@ -47,6 +48,7 @@ class Counter extends Component {
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
                 <button onClick={this.handleIncrement} className="btn btn-primary btn-sm">Increment</button>
                 <button onClick={this.handleDecrement} className="btn btn-danger m-2 btn-sm">Decrement</button>
+                <button onClick={() => this.props.onDelete(this.props.id)} className="btn btn-danger m-2 btn-sm">Delete</button>
                 {/* <ul>
                     {this.state.tags.length === 0 && 'Please create some tag'}
                     {this.renderTag()}
@@ -59,7 +61,7 @@ class Counter extends Component {
 
     getBadgeClasses() {
         let cls = "badge m-2  badge-lg  badge-";
-        cls += this.state.count === 0 ? "warning" : "secondary";
+        cls += this.state.value === 0 ? "warning" : "secondary";
         return cls;
     }
 }
