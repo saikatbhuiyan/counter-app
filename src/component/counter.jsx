@@ -2,10 +2,10 @@ import React, { Component } from 'react';
 
 class Counter extends Component {
 
-    state = {
-        value:this.props.value,
-        // tags:['t1','t2', 't3']
-    }
+    // state = {
+    //     value: this.props.counter.value,
+    //     // tags:['t1','t2', 't3']
+    // }
 
 /*
     constructor() {
@@ -20,18 +20,17 @@ class Counter extends Component {
 */
 
     formatCount() {
-        let { value } = this.state;
+        let  value  = this.props.counter.value;
         return (value === 0 ? 'Zero' : value);
     }
 
- 
-    handleIncrement= () => {
-        this.setState({value: this.state.value + 1})
-    }
+    // handleIncrement = () => {
+    //     this.setState({ value: this.state.value + 1 })
+    // }
 
-    handleDecrement= () => {
-        this.setState({value: this.state.value - 1})
-    }
+    // handleDecrement = () => {
+    //     this.setState({ value: this.state.value - 1 })
+    // }
 
 
 
@@ -46,9 +45,9 @@ class Counter extends Component {
         return ( 
             <dir>
                 <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
-                <button onClick={this.handleIncrement} className="btn btn-primary btn-sm">Increment</button>
-                <button onClick={this.handleDecrement} className="btn btn-danger m-2 btn-sm">Decrement</button>
-                <button onClick={() => this.props.onDelete(this.props.id)} className="btn btn-danger m-2 btn-sm">Delete</button>
+                <button onClick={() => this.props.onIncrement(this.props.counter)} className="btn btn-primary btn-sm">Increment</button>
+                <button onClick={() => this.props.onDecrement(this.props.counter)} className="btn btn-info m-2 btn-sm">Decrement</button>
+                <button onClick={() => this.props.onDelete(this.props.counter.id)} className="btn btn-danger m-2 btn-sm">Delete</button>
                 {/* <ul>
                     {this.state.tags.length === 0 && 'Please create some tag'}
                     {this.renderTag()}
@@ -61,7 +60,7 @@ class Counter extends Component {
 
     getBadgeClasses() {
         let cls = "badge m-2  badge-lg  badge-";
-        cls += this.state.value === 0 ? "warning" : "secondary";
+        cls += this.props.counter.value === 0 ? "warning" : "secondary";
         return cls;
     }
 }
