@@ -63,11 +63,7 @@ class Counters extends Component {
                                                     onDecrement={this.handleDecrement} 
                                                     onDelete={this.handleDelete} 
                                                 />)}
-        {/* <Counter />
-        <Counter />
-        <Counter />
-        <Counter />
-        <Counter /> */}
+
       </div> 
     );
   }
