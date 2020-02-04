@@ -8,9 +8,13 @@
     "python.jediEnabled": false,
     "editor.formatOnSave": true,
     "editor.formatOnSaveTimeout": 0,
-    "editor.formatOnPaste": true,
+    "editor.formatOnPaste": false,
     "[javascript]": {
         "editor.formatOnSave": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
     }
   
 }
